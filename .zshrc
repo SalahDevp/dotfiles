@@ -145,10 +145,12 @@ odd() {
 
 # environment
 export OMPI_CC=gcc-13
-export VISUAL=vim
+export VISUAL=nvim
 
 # use bat for man
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # for managing dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias gpt-to-obs='pbpaste | pandoc --from=markdown+tex_math_single_backslash --to=markdown+tex_math_dollars | pbcopy'
