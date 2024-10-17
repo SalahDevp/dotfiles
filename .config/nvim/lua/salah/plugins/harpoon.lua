@@ -17,23 +17,23 @@ return {
 
 		vim.keymap.set("n", "<leader>ha", function()
 			harpoon:list():select(1)
-		end)
+		end, { desc = "harpoon 1" })
 		vim.keymap.set("n", "<leader>hs", function()
 			harpoon:list():select(2)
-		end)
+		end, { desc = "harpoon 2" })
 		vim.keymap.set("n", "<leader>hd", function()
 			harpoon:list():select(3)
-		end)
+		end, { desc = "harpoon 3" })
 		vim.keymap.set("n", "<leader>hf", function()
 			harpoon:list():select(4)
-		end)
+		end, { desc = "harpoon 4" })
 
 		-- Toggle previous & next buffers stored within Harpoon list
 		vim.keymap.set("n", "<leader>hp", function()
 			harpoon:list():prev()
-		end)
+		end, { desc = "harpoon previous" })
 		vim.keymap.set("n", "<leader>hn", function()
 			harpoon:list():next()
-		end)
+		end, { desc = "harpoon next" })
 	end,
 }
