@@ -107,8 +107,20 @@ return {
 					capabilities = capabilities,
 					cmd = {
 						"clangd",
-						"--query-driver=/opt/homebrew/bin/g++-14",
+						--"--query-driver=/opt/homebrew/bin/g++-14",
 						"--log=verbose",
+					},
+				})
+			end,
+			["yamlls"] = function()
+				lspconfig.yamlls.setup({
+					capabilities = capabilities,
+					settings = {
+						-- validate = false,
+						yaml = {
+							validate = false,
+							schemas = {},
+						},
 					},
 				})
 			end,
