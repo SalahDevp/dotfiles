@@ -1,5 +1,6 @@
 return {
 	"SalahDevp/scratch.nvim",
+	dev = false,
 	config = function()
 		local scratch = require("scratch")
 
@@ -17,7 +18,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>bs", "<cmd>Scratch buf<cr>")
+		vim.keymap.set({ "n", "v" }, "<leader>bs", "<cmd>Scratch buf<cr>")
 		vim.keymap.set("n", "<leader>be", "<cmd>Scratch eval<cr>")
 	end,
 }

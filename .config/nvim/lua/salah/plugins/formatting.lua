@@ -13,6 +13,8 @@ return {
 				python = { "isort", "black" },
 				cpp = { "clang-format" },
 				c = { "clang-format" },
+				ts = { "prettier" },
+				js = { "prettier" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

@@ -154,3 +154,9 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias gpt-to-obs='pbpaste | pandoc --from=markdown+tex_math_single_backslash --to=markdown+tex_math_dollars | pbcopy'
+
+#Terraform
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+alias tf='terraform'

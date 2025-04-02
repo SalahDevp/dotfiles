@@ -27,10 +27,14 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
+				"intelephense",
 				"clangd",
 				"pyright",
 				"lua_ls",
 				"yamlls",
+				"ts_ls",
+				"terraformls",
+				"tflint",
 			},
 		})
 
