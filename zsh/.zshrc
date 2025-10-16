@@ -125,7 +125,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 #alias gcc="gcc-14"
 #alias g++="g++-14"
@@ -157,13 +157,16 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 alias tf='terraform'
+alias etf='dotenv -- terraform'
 
 # disable auto-updates for homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-export GOPATH=$HOME/go
-export GOBIN=$HOME/go/bin
-export PATH=$GOBIN:$PATH
+# export GOPATH=$HOME/go
+# export GOBIN=$HOME/go/bin
+# export PATH=$GOBIN:$PATH
+export PATH=$PATH:/usr/local/go/bin
+
 
 
 export NVM_DIR="$HOME/.nvm"
