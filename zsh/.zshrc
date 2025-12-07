@@ -158,6 +158,7 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 alias tf='terraform'
 alias etf='dotenv -- terraform'
+alias k='kubectl'
 
 # disable auto-updates for homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -165,7 +166,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # export GOPATH=$HOME/go
 # export GOBIN=$HOME/go/bin
 # export PATH=$GOBIN:$PATH
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:/home/salah/.cargo/bin
 
 
 
