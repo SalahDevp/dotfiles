@@ -1,4 +1,12 @@
-return {
+return {}
+-- DEPRECATED
+-- After (0.12 native)
+-- For languages not bundled, install tree-sitter-cli and run :TSInstall <lang>
+--
+--
+--
+--
+--[[ return {
 	"nvim-treesitter/nvim-treesitter",
 	branch = "main",
 	lazy = false,
@@ -104,4 +112,4 @@ return {
 			end,
 		})
 	end,
-}
+} ]]
