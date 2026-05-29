@@ -173,3 +173,9 @@ export PATH=$PATH:/usr/local/go/bin:/home/salah/.cargo/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$HOME/.local/bin:$PATH"
+
+# Claude Runner
+alias trybe="/usr/local/bin/claude-runner"
+export PATH="/usr/local/texlive/2026/bin/universal-darwin:$PATH"
+
