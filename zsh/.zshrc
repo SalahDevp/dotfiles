@@ -160,6 +160,8 @@ alias tf='terraform'
 alias etf='dotenv -- terraform'
 alias k='kubectl'
 
+alias lg='lazygit'
+
 # disable auto-updates for homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
 
@@ -179,3 +181,6 @@ export PATH="$HOME/.local/bin:$PATH"
 alias trybe="/usr/local/bin/claude-runner"
 export PATH="/usr/local/texlive/2026/bin/universal-darwin:$PATH"
 
+for f in ~/.config/zsh/*.zsh(N); do source "$f"; done
+
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

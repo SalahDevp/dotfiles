@@ -9,7 +9,8 @@ return {
 				vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
 			end
 
-			-- Navigation
+			-- Deprecated in favor of diffview
+			--[[ -- Navigation
 			map("n", "]h", gs.next_hunk, "Next Hunk")
 			map("n", "[h", gs.prev_hunk, "Prev Hunk")
 
@@ -35,14 +36,14 @@ return {
 			map("n", "<leader>gtd", gs.toggle_deleted, "Toggle Deleted")
 			map("n", "<leader>gR", gs.refresh, "Refresh Gitsigns")
 
+			-- Text objects
+			map({ "o", "x", "n" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Select Hunk") ]]
+
 			-- Blame operations
 			map("n", "<leader>gb", function()
 				gs.blame_line({ full = true })
 			end, "Blame Line")
 			map("n", "<leader>gB", gs.toggle_current_line_blame, "Toggle Line Blame")
-
-			-- Text objects
-			map({ "o", "x", "n" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Select Hunk")
 		end,
 	},
 }

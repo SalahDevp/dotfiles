@@ -1,4 +1,6 @@
-return {
+return {}
+-- Deprecated in favor of Claude Code :)
+--[[ return {
 	"CopilotC-Nvim/CopilotChat.nvim",
 	branch = "main",
 	cmd = "CopilotChat",
@@ -77,4 +79,4 @@ return {
 
 		chat.setup(opts)
 	end,
-}
+} ]]
