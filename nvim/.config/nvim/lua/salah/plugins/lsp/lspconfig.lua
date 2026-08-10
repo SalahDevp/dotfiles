@@ -5,6 +5,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
+		"b0o/schemastore.nvim",
 	},
 	config = function()
 		-- import lspconfig plugin
@@ -108,11 +109,30 @@ return {
 
 		vim.lsp.config("clangd", { cmd = { "clangd", "--log=verbose" } })
 
+		vim.lsp.config("terraformls", {
+			-- Don't attach to special buffers (diffview://, fugitive://, ...).
+			-- terraform-ls rejects non-file URIs as workspace folders and spams
+			-- "Ignoring workspace folder (unsupported or invalid URI)" warnings.
+			root_dir = function(bufnr, on_dir)
+				local name = vim.api.nvim_buf_get_name(bufnr)
+				if name:find("://", 1, true) then
+					return
+				end
+				on_dir(vim.fs.root(bufnr, { ".terraform", ".git" }) or vim.fs.dirname(name))
+			end,
+		})
+
 		vim.lsp.config("yamlls", {
 			settings = {
 				yaml = {
-					validate = false,
-					schemas = {},
+					validate = true,
+					completion = true,
+					hover = true,
+					schemaStore = {
+						enable = false,
+						url = "",
+					},
+					schemas = require("schemastore").yaml.schemas(),
 				},
 			},
 		})

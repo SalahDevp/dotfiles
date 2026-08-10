@@ -16,6 +16,8 @@ return {
 				ts = { "prettier" },
 				js = { "prettier" },
 				go = { "gofmt" },
+				terraform = { "terraform_fmt" },
+				tf = { "terraform_fmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
